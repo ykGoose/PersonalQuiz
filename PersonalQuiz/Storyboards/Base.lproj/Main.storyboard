@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Introduction View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,9 +237,19 @@
                             <constraint firstItem="8yS-1r-S7T" firstAttribute="top" secondItem="ORk-1q-bq4" secondAttribute="bottom" constant="8" symbolic="YES" id="jaq-fK-BFr"/>
                             <constraint firstItem="ZsV-aL-A9B" firstAttribute="trailing" secondItem="ORk-1q-bq4" secondAttribute="trailing" id="rmv-os-leN"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="MrY-tb-m6I"/>
+                                <exclude reference="HZS-K5-o7Y"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="0ae-Pj-FMU">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Ju8-h4-Dyp"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Ju8-h4-Dyp">
+                            <connections>
+                                <segue destination="OTC-Dz-y6e" kind="show" id="WQb-Xy-nZn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="OTC-Dz-y6e" kind="show" identifier="showResult" id="m5n-68-V8e"/>
@@ -284,10 +294,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результаты" id="oWg-aa-x2p">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="8by-Ly-dZq"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="8by-Ly-dZq">
+                            <connections>
+                                <segue destination="YiD-fI-aUi" kind="unwind" unwindAction="unwindWithSegue:" id="hFn-k5-Ck5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUG-48-69a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="YiD-fI-aUi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="396" y="-128"/>
         </scene>
@@ -310,6 +325,9 @@
             <point key="canvasLocation" x="-1176" y="657"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WQb-Xy-nZn"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
