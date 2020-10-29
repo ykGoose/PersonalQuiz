@@ -40,7 +40,7 @@ extension Question {
                 ]
             ),
             Question(
-                text: "Какую пищу вы предпочитаете",
+                text: "Нравятся ли вам поездки",
                 type: .ranged,
                 answers: [
                     Answer(text: "Ненавижу", type: .cat),
