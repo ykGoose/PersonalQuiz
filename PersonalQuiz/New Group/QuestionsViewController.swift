@@ -113,6 +113,7 @@ extension QuestionsViewController {
     
     private func showRangedStackview(with answers: [Answer]) {
         rangedStackView.isHidden = false
+        rangedSlider.value = 1.5
         rangedLabels.first?.text = answers.first?.text
         rangedLabels.last?.text = answers.last?.text
     }
@@ -137,6 +138,9 @@ extension QuestionsViewController {
             }
     
             }
+        for answer in answerChoosen {
+            print(answer)
+        }
         return count
     }
 }
