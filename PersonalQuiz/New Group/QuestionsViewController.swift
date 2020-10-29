@@ -128,18 +128,13 @@ extension QuestionsViewController {
     }
     
     private func resultCounted(choosenAnswer: [Answer]) -> [AnimalType : Int] {
-        var  count: [AnimalType: Int] = [:]
-        
+        var  count: [AnimalType: Int] = [:]        
         for answer in choosenAnswer {
             if let counter = count[answer.type] {
                 count[answer.type] =  counter + 1
             } else {
                 count[answer.type] = 1
             }
-    
-            }
-        for answer in answerChoosen {
-            print(answer)
         }
         return count
     }

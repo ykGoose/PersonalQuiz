@@ -10,7 +10,7 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setHidesBackButton(true, animated: true)
-
+        
         userAnimal = resultShowed(resultDictionary: results)
         
         resultView.first?.text = "Вы - \(userAnimal.rawValue)"
